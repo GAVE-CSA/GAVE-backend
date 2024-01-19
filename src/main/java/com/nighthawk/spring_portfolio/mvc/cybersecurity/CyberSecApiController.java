@@ -1,18 +1,22 @@
 package com.nighthawk.spring_portfolio.mvc.cybersecurity;
-
+import java.util.HashMap;
+import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-// hello 
 
 @RestController
 @RequestMapping("/api/news")
 public class CyberSecApiController {
     @Autowired
-    private NewsNowAPI newsNowAPI; // Use lowercase for the first letter
+    private NewsNowAPI newsNowAPI; 
 
-    @GetMapping("/fetch") // Use @GetMapping for fetching data
-    public String fetchNews() {
-        return newsNowAPI.fetchData();
-    }
+    // return JSON object 
+    @GetMapping("/fetch")
+    public Map<String, String> fetchNews() {
+        Map<String, String> response = new HashMap<>();
+        response.put("data", newsNowAPI.fetchData());
+        return response;
 }
+
+}
+
