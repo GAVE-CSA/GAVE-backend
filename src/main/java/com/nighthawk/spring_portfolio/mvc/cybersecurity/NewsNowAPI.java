@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 public class NewsNowAPI {
     
     private static final String API_URL = "https://newsnow.p.rapidapi.com/news";
-    private static final String API_KEY = "d2f7c75442mshde016465b174ed9p10a7b5jsn1acedf7fc107";  // Replace with your API key
+    private static final String API_KEY = "d2f7c75442mshde016465b174ed9p10a7b5jsn1acedf7fc107";  
 
     public String fetchData() {
         try {
